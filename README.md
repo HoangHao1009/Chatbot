@@ -3,6 +3,22 @@ This project is built to help you traning a simple chatbot by your own data. You
 
 The architectures of chatbot are: modern RNN (GRU), seq2seq, encoder - decoder, Doc-type-attention mechanism (LuongAttention).
 
+# Table of contents:
+- Library installation
+- Usage:
+  + I. Train your model by yourself
+    + Prepare data
+    + Transform raw csv data to data that model can use
+    + Design model
+    + Training
+    + Save model
+  + II. Use pre-train model:
+    + Load parameters and data
+    + Model setting
+  + III. Chatting with model
+- Reference
+
+
 # Library installation
 Run this code to use chatbot:
 ```
