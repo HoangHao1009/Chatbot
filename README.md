@@ -3,15 +3,15 @@ This project is built to help you traning a simple chatbot by your own data. You
 A sample chat:
 ```
 Me > hello
-Bot: hello . . . . . me . .
-Me > have a good day
-Bot: i m not a bad man . you know . ? ?
-Me > yes i know. you are a good man
-Bot: i m sorry i m sorry . you know . ? ?
-Me > i don't mind
-Bot: you don t have to help me . you know . ?
-Me > yes i know
-Bot: you know you were friends . of your friends . ? ?
+Bot: hello . . . . . . .
+Me > how are you
+Bot: i m fine . you know how i m a child .
+Me > you are not a child. you are a robot
+Error: unknown word
+Me > you are not a child
+Bot: i am not . . . . times . times
+Me > you are stupid
+Bot: i m not a professional . you re a lot of things .
 ```
 
 The architectures of chatbot are: modern RNN (GRU), seq2seq, encoder - decoder, Doc-type-attention mechanism (LuongAttention).
