@@ -1,5 +1,5 @@
 # Seq2Seq With Attention CHATBOT
-This project is built to help you traning your chatbot by your special data. You can also use pre-train chatbot that is trained with [Cornell Movie Dialogs](https://www.cs.cornell.edu/~cristian/Cornell_Movie-Dialogs_Corpus.html).
+This project is built to help you traning a simple chatbot by your own data. You can also use pre-train chatbot that is trained with [Cornell Movie Dialogs](https://www.cs.cornell.edu/~cristian/Cornell_Movie-Dialogs_Corpus.html).
 
 The architectures of chatbot are: modern RNN (GRU), seq2seq, encoder - decoder, Doc-type-attention mechanism (LuongAttention).
 
@@ -20,7 +20,6 @@ Or you can try `Datapreparer` to create a file that can be used to train:
 ```python
 from chatbot import Datapreparer
 import torch
-import torch.nn as nn
 
 movie_data = Datapreparer.LoadmovieData('movie-corpus/utterances.jsonl') #utterences.jsonl that contain lines of question-answer
 #load data and take pairs
@@ -144,5 +143,6 @@ chatbot.chatting(20)
 
 # Reference
 1. [Seq2seq apply attention mechanism paper](https://arxiv.org/ftp/arxiv/papers/2006/2006.02767.pdf)
+2. Foundation knowledge and coding from scratch with: [Dive Into Deep Learning](https://d2l.aivivn.com/) (Especially Chapter 9, Chapter 14)
 
 
