@@ -1,6 +1,6 @@
 # Seq2Seq With Attention CHATBOT
 This project is built to help you traning a simple chatbot by your own data. You can also use pre-train chatbot that is trained with [Cornell Movie Dialogs](https://www.cs.cornell.edu/~cristian/Cornell_Movie-Dialogs_Corpus.html).
-A sample chat:
+A sample chat with model use `savemodel.pt`:
 ```
 Me > hello
 Bot: hello . . . . . . .
