@@ -143,6 +143,7 @@ chatbot.chatting(20)
 
 # Reference
 1. [Seq2seq apply attention mechanism paper](https://arxiv.org/ftp/arxiv/papers/2006/2006.02767.pdf)
-2. Foundation knowledge and coding from scratch with: [Dive Into Deep Learning](https://d2l.aivivn.com/) (Especially Chapter 9, Chapter 14)
+2. LuongAttention Paper: [Effective Approaches to Attention-based Neural Machine Translation](https://arxiv.org/abs/1508.04025)
+3. Foundation knowledge and coding from scratch with: [Dive Into Deep Learning](https://d2l.aivivn.com/) (Especially Chapter 9, Chapter 14)
 
 
