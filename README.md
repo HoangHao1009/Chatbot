@@ -1,5 +1,18 @@
 # Seq2Seq With Attention CHATBOT
 This project is built to help you traning a simple chatbot by your own data. You can also use pre-train chatbot that is trained with [Cornell Movie Dialogs](https://www.cs.cornell.edu/~cristian/Cornell_Movie-Dialogs_Corpus.html).
+A sample chat:
+```
+Me > hello
+Bot: hello . . . . . me . .
+Me > have a good day
+Bot: i m not a bad man . you know . ? ?
+Me > yes i know. you are a good man
+Bot: i m sorry i m sorry . you know . ? ?
+Me > i don't mind
+Bot: you don t have to help me . you know . ?
+Me > yes i know
+Bot: you know you were friends . of your friends . ? ?
+```
 
 The architectures of chatbot are: modern RNN (GRU), seq2seq, encoder - decoder, Doc-type-attention mechanism (LuongAttention).
 
