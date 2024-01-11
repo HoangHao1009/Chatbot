@@ -65,8 +65,7 @@ class Chatbot:
         input_sentence = ''
         while(1):
             try:
-                input_sentence = input('> ')
-                print('Me: ', input_sentence)
+                input_sentence = input('Me > ')
                 if input_sentence == 'q' or input_sentence == 'quit': break
                 input_sentence = TextProcessor.normalizString(input_sentence)
                 output_words = evaluate(input_sentence, max_length)
