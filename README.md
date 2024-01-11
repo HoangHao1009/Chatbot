@@ -97,7 +97,7 @@ torch.save({
     'en_opt': encoder_optimizer.state_dict(),
     'de_opt': decoder_optimizer.state_dict(),
     'voc_dict': voc.__dict__
-}, 'yoursavefile.pt')
+}, 'save_model.pt')
 ```
 
 ## II. Use Pre-train Model
@@ -108,7 +108,7 @@ from chatbot import Chatbot, Model, Vocabulary
 import torch
 import torch.nn as nn
 
-checkpoint = torch.load('save_model_8000.pt')
+checkpoint = torch.load('save_model.pt')
 for keys in checkpoint.keys():
     print(keys)
 
