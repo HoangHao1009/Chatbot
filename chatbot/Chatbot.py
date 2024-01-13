@@ -16,8 +16,8 @@ class GreedySearchDecoder(nn.Module):
 
     def forward(self, input_seq, input_length, max_length):
         encoder_outputs, encoder_hidden = self.encoder(input_seq, input_length)
-        #encoder_outputs: (max_lengths, batch_size, hidden_size)
-        #encoder_hidden: (n_layers * num_directions, batch_size, hidden_size)
+        #encoder_outputs: (max_lengths, 1, hidden_size) #batch_size = 1 (1 sentence is put in)
+        #encoder_hidden: (n_layers * num_directions, 1, hidden_size)
         decoder_hidden = encoder_hidden[:self.decoder.n_layers]
         decoder_input = torch.ones(1, 1, device = device, dtype = torch.long) * SOS_token
         all_tokens = torch.zeros([0], device = device, dtype = torch.long)
@@ -29,21 +29,21 @@ class GreedySearchDecoder(nn.Module):
                 decoder_hidden,
                 encoder_outputs
             )
-            #decoder_output: (batch_size, voc.num_words)
-            #decoder_hidden: (n_layers * num_directions, batch_size, hidden_size)
+            #decoder_output: (1, voc.num_words)
+            #decoder_hidden: (n_layers * num_directions, 1, hidden_size)
             decoder_scores, decoder_input = torch.max(
                 decoder_output,
                 dim = 1
             )
-            #decoder_scores: (batch_size, ) ->max of probs of voc.numwords
-            #decoder_input: (batch_size, ) -> index of decoder_scores
+            #decoder_scores: (1, scalar-> max_probs) ->max of probs of voc.numwords
+            #decoder_input: (1, scalar-> index 0f max_probs) -> index of decoder_scores
 
-            all_tokens = torch.cat((all_tokens, decoder_input), dim = 0) #(batch_size, )
-            all_scores = torch.cat((all_scores, decoder_scores), dim = 0) #(batch_size, )
+            all_tokens = torch.cat((all_tokens, decoder_input), dim = 0) #(all_tokens_lengths + 1)
+            all_scores = torch.cat((all_scores, decoder_scores), dim = 0) #(all_tokens_lengths + 1)
 
             decoder_input = torch.unsqueeze(decoder_input, 0) #(add extra dim for next loop)
 
-        return all_tokens, all_scores #(max_length, batch_size)
+        return all_tokens, all_scores #(max_length, 1)
 
 
 class Chatbot:
